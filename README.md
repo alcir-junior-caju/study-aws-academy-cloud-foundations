@@ -275,3 +275,187 @@ A análise de TCO realizada pela Delaware North confirmou um resultado impressio
 * **Outros Benefícios:** A empresa também observou melhorias em **consolidação de dados**, **conformidade de segurança** e **recuperação de desastres**.
 
 Este caso de estudo prova que o modelo de "pague pelo que usar" da AWS não apenas reduz custos, mas também aumenta a agilidade e permite que as empresas se concentrem em inovar.
+
+### AWS Organizations e Gerenciamento de Contas
+
+O **AWS Organizations** é um serviço gratuito de gerenciamento que permite consolidar várias contas da AWS em uma única organização, facilitando o gerenciamento e o faturamento.
+
+#### Por que usar o AWS Organizations?
+
+* **Faturamento Consolidado:** Ele agrupa o faturamento de várias contas, tornando a visualização de custos por departamento ou equipe mais clara.
+* **Gerenciamento de Segurança:** Permite aplicar controles de segurança a uma ou mais contas de forma centralizada.
+
+#### Estrutura do AWS Organizations
+
+A estrutura do Organizations é hierárquica, como uma árvore de cabeça para baixo com a **raiz (root)** no topo.
+
+* **Raiz (Root):** A conta principal que gerencia toda a organização.
+* **Unidade Organizacional (OU):** Uma ramificação que pode conter outras OUs e contas. Cada conta pode pertencer a apenas uma OU.
+* **Contas:** Contas padrão da AWS que contêm seus recursos.
+
+#### Comparação: IAM vs. Service Control Policies (SCPs)
+
+É importante notar a diferença entre as políticas de **IAM** e as **SCPs**:
+
+* **Políticas IAM:** Permitem ou negam o acesso a serviços da AWS, mas são aplicadas apenas a usuários, grupos ou funções IAM dentro de uma única conta.
+* **Políticas de Controle de Serviço (SCPs):** Permitem ou negam o acesso a serviços específicos diretamente em uma conta ou em um grupo de contas (OU). Uma SCP restringe o acesso em um nível mais alto do que o IAM.
+
+#### Como Configurar o AWS Organizations
+
+Para configurar o serviço, siga estes passos:
+
+1.  **Criar a Organização:** Use sua conta AWS atual como a conta principal e convide ou crie outras contas para se juntarem a ela.
+2.  **Criar OUs:** Organize as contas em Unidades Organizacionais para agrupar e gerenciar melhor.
+3.  **Criar SCPs:** Defina políticas de controle de serviço para restringir ações que podem ser delegadas a usuários e funções nas contas membro.
+4.  **Testar as Políticas:** Use o IAM Policy Simulator ou faça login nas contas para garantir que as políticas funcionem conforme o esperado.
+
+#### Formas de Gerenciar o AWS Organizations
+
+Você pode gerenciar sua organização usando diversas interfaces, todas construídas sobre uma API REST:
+
+1.  **AWS Management Console:** Interface gráfica via navegador.
+2.  **AWS Command Line Interface (CLI):** Ferramenta de linha de comando para automação.
+3.  **Software Development Kits (SDKs):** Bibliotecas e código de exemplo para desenvolvedores interagirem com a AWS via linguagens de programação.
+4.  **HTTPS Query API:** Permite acesso programático direto ao servidor para requisições HTTPS.
+
+### Ferramentas de Faturamento e Gerenciamento de Custos da AWS
+
+O serviço **Billing and Cost Management** é o hub central para pagar sua fatura, monitorar o uso e orçar suas despesas na AWS. Ele oferece ferramentas para prever custos futuros e analisar tendências de uso com granularidade diária ou mensal.
+
+#### Principais Ferramentas de Gerenciamento de Custos
+
+1.  **AWS Billing Dashboard (Painel de Faturamento):**
+    * Fornece uma visão geral do seu status de gastos no mês até a data.
+    * Ajuda a identificar os serviços que mais contribuem para sua fatura.
+    * Inclui gráficos como o **Resumo de Gastos (Spend Summary)**, que compara os gastos do mês anterior com as estimativas e previsões para o mês atual.
+    * Apresenta o gráfico de **Gasto do Mês por Serviço**, mostrando os serviços mais caros em proporção ao seu custo total.
+
+2.  **AWS Bills (Faturas da AWS):**
+    * Exibe os custos incorridos no último mês para cada serviço.
+    * Oferece um detalhamento por região da AWS e por contas vinculadas.
+    * Permite acesso às informações mais atualizadas sobre seus custos e uso.
+
+3.  **AWS Cost Explorer (Explorador de Custos):**
+    * Uma ferramenta visual que ajuda a entender e gerenciar seus custos e uso da AWS ao longo do tempo.
+    * Inclui relatórios padrão, como o de **Custos Mensais Correntes**, que visualiza os gastos dos últimos três meses e fornece previsões para o próximo.
+
+4.  **AWS Budgets (Orçamentos):**
+    * Permite criar orçamentos personalizados para monitorar seus gastos.
+    * Envia notificações via e-mail ou **Amazon Simple Notification Service (Amazon SNS)** quando os gastos excedem os limites definidos.
+    * Orçamentos podem ser rastreados em nível mensal, trimestral ou anual.
+
+5.  **AWS Cost and Usage Report (Relatório de Custo e Uso):**
+    * É a fonte de informação mais abrangente sobre seus custos e uso.
+    * Lista o uso de cada serviço em itens de linha horários ou diários.
+    * Pode ser configurado para publicar relatórios de faturamento em um bucket S3, com atualizações diárias.
+
+Essas ferramentas trabalham juntas para dar a você total transparência e controle sobre seus gastos na nuvem.
+
+### Como Usar as Ferramentas do Painel de Faturamento da AWS
+
+O **AWS Billing Dashboard** é a sua central de controle para monitorar, analisar e gerenciar os custos da sua conta. Ele oferece uma visão completa e detalhada dos seus gastos.
+
+#### 1. Acessando o Painel de Faturamento
+
+* Na página inicial da AWS, clique no menu de conta e selecione **My Billing Dashboard**.
+* O painel exibirá um resumo dos seus custos no mês, os serviços que mais gastam e uma previsão de gastos futuros.
+
+#### 2. Visualizando e Analisando Custos com o Cost Explorer
+
+O **Cost Explorer** permite mergulhar fundo nos seus dados de custo.
+* **Acesso:** Clique em **Cost Explorer** no painel de faturamento.
+* **Análise de Tendências:** Veja os custos atuais, previstos para o final do mês e compare com meses anteriores para identificar aumentos ou diminuições.
+* **Explorando Detalhes:** Use as categorias para detalhar os custos por **região**, **tipo de instância** ou **serviço**. Por exemplo, é possível descobrir qual região está gerando mais custos ou qual tipo de instância específica é mais cara.
+* **Criando e Salvando Relatórios:** Você pode criar relatórios personalizados (como "custos do acumulado do ano") e salvá-los para acesso rápido no futuro.
+
+#### 3. Gerenciando Orçamentos com o AWS Budgets
+
+O **AWS Budgets** ajuda a controlar os gastos e evitar surpresas.
+* **Configuração:** Crie orçamentos para custos ou uso de serviço (por exemplo, um orçamento de $300 mensais).
+* **Alertas:** Defina alertas para ser notificado (via e-mail ou SNS) quando seus custos ou uso excederem um certo limite (por exemplo, 90% do orçamento).
+* **Lembre-se:** Os alertas apenas notificam você; eles não desligam os serviços automaticamente.
+
+#### 4. Outras Ferramentas de Faturamento
+
+* **AWS Bills:** Para uma fatura detalhada, com custos listados por serviço e por região.
+* **AWS Cost and Usage Report:** Para relatórios mais granulares, com informações de uso por hora ou por dia, que podem ser enviados para um bucket S3.
+
+Usar essas ferramentas permite que você tenha total visibilidade e controle sobre seus gastos na nuvem.
+
+### Planos de Suporte Técnico da AWS
+
+O suporte da AWS oferece uma combinação de ferramentas e expertise para ajudar a planejar, implantar e otimizar suas soluções com confiança.
+
+#### Ferramentas e Funções de Suporte
+
+* **Support Concierge:** Um especialista em faturamento e contas que oferece análise rápida e eficiente para questões não-técnicas.
+* **AWS Trusted Advisor:** Um serviço automatizado que age como um especialista em nuvem, verificando seu ambiente para identificar oportunidades de redução de custos, melhoria de desempenho e segurança. É um recurso essencial para seguir as melhores práticas.
+* **Technical Account Manager (TAM):** Um ponto de contato dedicado, disponível apenas no **Plano Enterprise**, que fornece orientação proativa, revisão de arquitetura e comunicação contínua.
+
+#### Os Quatro Planos de Suporte
+
+A AWS oferece quatro planos para atender a diferentes necessidades. Os planos que não são o Basic oferecem casos de suporte técnico ilimitados, sem contratos de longo prazo.
+
+1.  **Plano Basic (Gratuito):**
+    * Suporte para questões de faturamento e conta.
+    * Suporte para aumentos de limite de serviço.
+    * **Não inclui suporte para casos técnicos.**
+
+2.  **Plano Developer:**
+    * Acesso a orientações sobre melhores práticas.
+    * Ferramentas de diagnóstico.
+    * Suporte de arquitetura de blocos de construção.
+
+3.  **Plano Business:**
+    * Acesso completo ao **AWS Trusted Advisor**.
+    * Orientação sobre casos de uso.
+    * Acesso a uma API para gerenciamento automatizado de casos de suporte e operações do Trusted Advisor.
+
+4.  **Plano Enterprise:**
+    * Inclui todos os benefícios do Plano Business.
+    * **Acesso exclusivo a um Technical Account Manager (TAM).**
+    * Roteamento de caso "white glove" (tratamento especial).
+    * Orientação de arquitetura de aplicação.
+    * Revisões de negócios gerenciais.
+    * Suporte de gerenciamento de eventos de infraestrutura.
+
+#### Níveis de Gravidade de Casos
+
+A **Gravidade** define o tipo de resposta que você receberá, independentemente do seu plano (exceto o Basic, que não tem suporte técnico para casos).
+
+1.  **Crítico:** O negócio está em risco; funções críticas da aplicação estão indisponíveis.
+2.  **Urgente:** O negócio é significativamente impactado; funções importantes da aplicação estão indisponíveis.
+3.  **Alto:** Funções importantes da aplicação estão prejudicadas ou degradadas.
+4.  **Normal:** Funções não-críticas se comportam de forma anormal ou há uma pergunta de desenvolvimento sensível ao tempo.
+5.  **Baixo:** Uma pergunta de desenvolvimento geral ou solicitação de recurso.
+
+A escolha do plano de suporte deve considerar tanto os custos e recursos quanto os tempos de resposta esperados para cada nível de gravidade.
+
+### Resumo do Módulo 2 e Questão de Exame
+
+Este módulo aprofundou na **economia e nos custos da nuvem**. Em resumo, você aprendeu sobre:
+
+* Os **fundamentos de preços** da AWS.
+* O conceito de **Custo Total de Propriedade (TCO)**.
+* As ferramentas **AWS Simple Monthly Calculator** e **AWS TCO Calculator**.
+* As ferramentas de **Faturamento e Gerenciamento de Custos** (Billing Dashboard, Cost Explorer, Budgets).
+* Os **quatro planos de suporte** da AWS (Basic, Developer, Business, Enterprise).
+
+O objetivo principal é que você possa planejar, implantar e otimizar suas soluções com confiança, escolhendo o plano e as ferramentas que melhor atendem às suas necessidades.
+
+---
+
+### Análise de uma Questão de Certificação
+
+A seguir, um exemplo de questão de exame para praticar o que foi aprendido:
+
+**Pergunta:** Qual serviço da AWS oferece recomendações de otimização de segurança da infraestrutura?
+
+**Análise:**
+A palavra-chave na pergunta é "**recomendações**". Isso aponta para um serviço que não apenas mostra o status, mas também dá conselhos para melhorar sua infraestrutura.
+
+**Resposta Correta:**
+A resposta é **C: Trusted Advisor**.
+
+**Justificativa:**
+O **AWS Trusted Advisor** é o serviço que fornece orientações em tempo real para ajudar você a provisionar recursos seguindo as melhores práticas da AWS. Ele é um recurso online que ajuda a reduzir custos, aumentar o desempenho e **melhorar a segurança** ao otimizar seu ambiente AWS.
