@@ -180,3 +180,98 @@ A resposta é **C: A capacidade de iniciar instâncias sob demanda, quando neces
 
 **Justificativa:**
 Em um data center tradicional, você precisa comprar recursos para lidar com o pico de demanda, mesmo que seja um evento raro. Isso resulta em custos elevados e recursos ociosos. Na AWS, a capacidade de **iniciar e encerrar instâncias dinamicamente** permite que você pague apenas pela capacidade que usa, tornando-se uma solução muito mais econômica para cargas de trabalho que variam.
+
+### Módulo 2: Economia e Modelagem de Custos em Nuvem
+
+Bem-vindo(a) ao Módulo 2! Este módulo foca nos aspectos financeiros e de custo da nuvem.
+
+O objetivo principal é entender como a AWS precifica seus serviços e como você pode gerenciar e otimizar os gastos.
+
+### Tópicos Abordados
+
+* **Fundamentos de Preços da AWS:** Compreendendo a filosofia de precificação e suas características principais.
+* **Custo Total de Propriedade (TCO):** Analisando os elementos do TCO e como usar a calculadora mensal da AWS.
+* **Gerenciamento de Custos e Faturamento:** Como usar ferramentas como AWS Organizations para faturamento consolidado, além do Billing Dashboard, Cost Explorer, Budgets e relatórios de uso.
+* **Planos de Suporte da AWS:** Uma visão geral das diferentes opções de suporte técnico disponíveis.
+
+### Fundamentos de Preços da AWS
+
+A filosofia de preços da AWS se baseia em três pilares principais, que permitem que a nuvem seja mais econômica e flexível que os data centers tradicionais.
+
+1.  **Pague apenas pelo que usar:** Não há grandes despesas iniciais ou contratos de longo prazo. Você paga somente pelos serviços que consome e pelo tempo que os utiliza.
+2.  **Pague menos quando usar mais:** O preço por unidade (por GB, por exemplo) diminui à medida que seu volume de uso aumenta, oferecendo descontos por volume.
+3.  **Pague menos à medida que a AWS cresce:** A AWS investe em eficiência e repassa as economias de escala para os clientes, o que resulta em preços mais baixos ao longo do tempo.
+
+#### Detalhes de Preços e Cobrança
+
+O preço dos serviços da AWS é influenciado por três fatores: o **serviço** que você usa, o **volume de dados transferidos para fora da AWS** e a **região** onde o serviço está hospedado.
+
+* A transferência de dados **para** a AWS é gratuita.
+* A transferência de dados **entre serviços na mesma região** também é gratuita.
+* A cobrança é feita no final do mês, baseada no uso. As transferências de dados de saída são agregadas e cobradas como "AWS data transfer out".
+
+#### O AWS Free Tier (Nível Gratuito)
+
+Para ajudar novos clientes, a AWS oferece o **AWS Free Tier**. Por até 12 meses, você pode usar serviços como o **Amazon EC2** (instâncias T2 micro), **Amazon S3** e **Amazon EBS** dentro de um limite de uso gratuito.
+
+Além disso, alguns serviços como **Amazon VPC**, **AWS Elastic Beanstalk**, **Auto Scaling**, **AWS CloudFormation** e **AWS Identity and Access Management (IAM)** **não têm custo**. No entanto, lembre-se de que os recursos que esses serviços provisionam para você (como instâncias EC2) podem gerar cobranças.
+
+### Custo Total de Propriedade (TCO)
+
+O **TCO** é uma estimativa financeira que ajuda a comparar os custos diretos e indiretos de uma solução de TI. Ele é essencial para decidir entre uma implementação local (on-premises) e uma na nuvem.
+
+#### Comparação: On-premises vs. Nuvem
+
+* **Infraestrutura Local (On-premises):**
+    * **Implantação:** Instalação em servidores próprios.
+    * **Custos:** Baseados em **despesas de capital (CAPEX)**, que incluem custos fixos como instalações, hardware, licenças e equipe de manutenção.
+    * **Flexibilidade:** A escalabilidade é cara e demorada. Diminuir a escala não reduz os custos fixos.
+* **Infraestrutura em Nuvem (AWS):**
+    * **Implantação:** Recursos adquiridos da AWS.
+    * **Custos:** Baseados em **despesa variável**, que depende do uso do serviço.
+    * **Flexibilidade:** A escalabilidade é simples e os custos são fáceis de estimar.
+
+#### Calculadora de Custo Total de Propriedade (TCO Calculator)
+
+É uma ferramenta da AWS para comparar uma implementação física com seu equivalente na nuvem. Ela ajuda a justificar financeiramente a migração, destacando que a nuvem geralmente tem custos iniciais mais baixos e custos operacionais reduzidos.
+
+* **Exemplo Prático:** Uma solução on-premises de 3 anos pode custar mais de $100.000, enquanto uma equivalente na nuvem custa cerca de $7.000, representando uma economia de 96%.
+* **Vantagem da Nuvem:** Na nuvem, você provisiona recursos apenas quando precisa e os desativa quando não são mais necessários, evitando o custo de capacidade ociosa.
+
+#### Calculadora Simples de Custo Mensal (Simple Monthly Calculator)
+
+Esta é outra ferramenta da AWS para dar transparência aos preços. Ela permite estimar o custo mensal de uma solução de nuvem proposta, e você pode adicionar, modificar ou remover serviços para ver como o custo muda.
+
+* **Funcionalidade:**
+    * Ajuda a estimar custos mensais de serviços.
+    * Identifica oportunidades de redução de custo.
+    * Usa modelos de implantação comuns.
+
+Essas duas calculadoras são recursos valiosos para planejar e gerenciar seus custos na AWS.
+
+### Estudo de Caso: Delaware North e a Economia de Custos na Nuvem
+
+Este estudo de caso demonstra como o **Custo Total de Propriedade (TCO)** se aplica na prática, usando a migração da empresa Delaware North para a AWS.
+
+#### O Problema
+
+A Delaware North, uma líder global em serviços de alimentação, enfrentava um problema com seu data center local (on-premises): ele estava se tornando caro e ineficiente. A empresa precisava de um ambiente mais ágil para inovar e atender às demandas dos clientes.
+
+#### O Processo de Avaliação
+
+Em 2013, a empresa migrou 50 de seus sites para a AWS para uma fase de testes. A decisão de migrar totalmente para a nuvem foi baseada em três critérios principais:
+
+1.  **Tecnologia:** A solução de nuvem precisava de um conjunto de tecnologias robusto para suportar todas as cargas de trabalho empresariais.
+2.  **Operação:** A empresa buscava flexibilidade para otimizar processos internos e reduzir custos.
+3.  **Finanças:** A migração precisava demonstrar um retorno sobre o investimento (ROI) claro.
+
+#### Os Resultados da Migração para a AWS
+
+A análise de TCO realizada pela Delaware North confirmou um resultado impressionante:
+
+* **Economia Financeira:** A empresa projetou uma economia de **$3,5 milhões** em cinco anos.
+* **Redução de Hardware:** Reduziu seu hardware físico em mais de **90%**, eliminando um total de **205 servidores**.
+* **Agilidade e Velocidade:** O tempo para provisionar novas unidades de negócio foi reduzido de **2-3 semanas para apenas um dia**.
+* **Outros Benefícios:** A empresa também observou melhorias em **consolidação de dados**, **conformidade de segurança** e **recuperação de desastres**.
+
+Este caso de estudo prova que o modelo de "pague pelo que usar" da AWS não apenas reduz custos, mas também aumenta a agilidade e permite que as empresas se concentrem em inovar.
