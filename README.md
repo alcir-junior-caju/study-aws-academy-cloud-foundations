@@ -459,3 +459,163 @@ A resposta é **C: Trusted Advisor**.
 
 **Justificativa:**
 O **AWS Trusted Advisor** é o serviço que fornece orientações em tempo real para ajudar você a provisionar recursos seguindo as melhores práticas da AWS. Ele é um recurso online que ajuda a reduzir custos, aumentar o desempenho e **melhorar a segurança** ao otimizar seu ambiente AWS.
+
+# Módulo 3: Visão Geral da Infraestrutura Global da AWS
+
+### Boas-vindas e Introdução
+Introdução à forma como a AWS organiza sua infraestrutura massiva ao redor do mundo.
+
+---
+
+### Tópicos Abordados
+* **Infraestrutura Global da AWS:** Como a AWS está fisicamente distribuída.
+* **Visão Geral dos Serviços e Categorias:** Conhecer os diferentes tipos de serviços que a AWS oferece.
+
+---
+
+### Recursos de Aprendizagem Disponíveis
+Para aprofundar seu conhecimento, você terá acesso a:
+* **Demonstração:** Focada nos detalhes da Infraestrutura Global.
+* **Atividade Prática (Hands-on):** Oportunidade para explorar o Console de Gerenciamento da AWS.
+* **Verificação de Conhecimento:** Um teste para avaliar sua compreensão dos conceitos-chave.
+
+---
+
+### Objetivos de Aprendizagem
+Ao final deste módulo, você será capaz de:
+* Diferenciar claramente os conceitos de:
+    * **Regiões da AWS**
+    * **Zonas de Disponibilidade (Availability Zones)**
+    * **Locais de Borda (Edge Locations)**
+* Identificar os principais serviços e suas respectivas categorias na AWS.
+
+# Visão Geral dos Serviços e Categorias de Serviços da AWS
+
+## Introdução
+
+A AWS oferece um amplo conjunto de produtos globais baseados em nuvem que podem ser usados como blocos de construção para arquiteturas de nuvem comuns.
+
+### A Plataforma AWS
+
+A infraestrutura global da AWS pode ser dividida em três elementos:
+* Regiões;
+* Zonas de disponibilidade;
+* Pontos de presença (que incluem os locais de borda).
+
+Essa infraestrutura fornece a plataforma para um vasto conjunto de serviços, como redes, armazenamento, serviços de computação e bancos de dados.
+
+Esses serviços são entregues como um utilitário sob demanda (on-demand), disponível em segundos, com preços no modelo pague-pelo-uso (pay-as-you-go).
+
+### Foco do Curso
+
+Existem 23 categorias diferentes de produtos ou serviços, e cada categoria consiste em um ou mais serviços. Este curso não tentará apresentar cada um deles. Em vez disso, o foco é nos serviços mais amplamente utilizados e que oferecem a melhor introdução à Nuvem AWS. O curso também se concentra nos serviços que têm maior probabilidade de serem abordados no exame AWS Certified Cloud Practitioner.
+
+---
+
+## Serviços de Armazenamento (Storage)
+
+* **Amazon Simple Storage Service (Amazon S3):** Um serviço de armazenamento de objetos que oferece escalabilidade, disponibilidade de dados, segurança e desempenho.
+* **Amazon Elastic Block Store (Amazon EBS):** Um armazenamento em bloco de alto desempenho projetado para uso com o Amazon EC2, tanto para cargas de trabalho intensivas em taxa de transferência (throughput) quanto em transações.
+* **Amazon Elastic File System (Amazon EFS):** Fornece um sistema de arquivos de rede (Network File System - NFS) elástico, escalável e totalmente gerenciado para uso com serviços na Nuvem AWS e recursos on-premises.
+* **Amazon S3 Glacier:** Uma classe de armazenamento do Amazon S3 segura, durável e de custo extremamente baixo, ideal para arquivamento de dados e backup de longo prazo.
+
+---
+
+## Serviços de Computação (Compute)
+
+* **Amazon Elastic Compute Cloud (Amazon EC2):** Fornece capacidade de computação redimensionável como máquinas virtuais na nuvem.
+* **Amazon EC2 Auto Scaling:** Permite adicionar ou remover automaticamente instâncias EC2 de acordo com as condições que você define.
+* **Amazon Elastic Container Service (Amazon ECS):** Um serviço de orquestração de contêineres de alta performance e escalabilidade que suporta contêineres Docker.
+* **Amazon Elastic Container Registry (Amazon ECR):** Um registro de contêineres Docker totalmente gerenciado que facilita para os desenvolvedores armazenar, gerenciar e implantar imagens de contêineres Docker.
+* **AWS Elastic Beanstalk:** Um serviço para implantar e escalar aplicações e serviços web em servidores familiares, como Apache e Microsoft Internet Information Services (IIS).
+* **AWS Lambda:** Permite que você execute código sem provisionar ou gerenciar servidores. Você paga apenas pelo tempo de computação que consome; não há cobrança quando seu código não está em execução.
+* **Amazon Elastic Kubernetes Service (Amazon EKS):** Facilita a implantação, o gerenciamento e a escala de aplicações em contêineres que usam Kubernetes na AWS.
+* **AWS Fargate:** Um mecanismo de computação para o Amazon ECS que permite executar contêineres sem ter que gerenciar servidores ou clusters.
+
+---
+
+## Serviços de Banco de Dados (Database)
+
+* **Amazon Relational Database Service (Amazon RDS):** Um banco de dados relacional na nuvem fácil de configurar, operar e escalar. Fornece capacidade redimensionável enquanto automatiza tarefas administrativas demoradas.
+* **Amazon Aurora:** Um banco de dados relacional compatível com MySQL e PostgreSQL. É configurado para ser cinco vezes mais rápido que os bancos de dados MySQL padrão e três vezes mais rápido que os bancos de dados PostgreSQL padrão.
+* **Amazon Redshift:** Permite executar consultas analíticas em petabytes de dados armazenados localmente na Amazon. Oferece desempenho rápido em qualquer escala.
+* **Amazon DynamoDB:** Um banco de dados NoSQL de chave-valor e de documentos totalmente gerenciado que oferece desempenho de milissegundos de um dígito em qualquer escala, com segurança integrada, backup e restauração, e cache em memória.
+
+---
+
+## Redes e Entrega de Conteúdo (Networking & Content Delivery)
+
+* **Amazon Virtual Private Cloud (Amazon VPC):** Permite provisionar seções logicamente isoladas da Nuvem AWS para lançar recursos AWS em uma rede virtual que você define.
+* **Elastic Load Balancing (ELB):** Distribui automaticamente o tráfego de entrada de aplicações entre múltiplos alvos, como instâncias Amazon EC2, contêineres, endereços IP e funções Lambda.
+* **Amazon CloudFront:** Uma rede de entrega de conteúdo (CDN) rápida que entrega de forma segura dados, vídeos, aplicações e APIs a clientes globalmente com baixa latência e altas velocidades de transferência.
+* **AWS Transit Gateway:** Permite que os clientes conectem suas Amazon VPCs e suas redes on-premises a um único gateway gerenciado centralmente.
+* **Amazon Route 53:** Um serviço web de Sistema de Nomes de Domínio (DNS) em nuvem, escalável e projetado para oferecer uma maneira confiável de rotear usuários finais para aplicações na internet. Ele traduz URLs para os endereços IP numéricos que os computadores usam para se conectar.
+* **AWS Direct Connect:** Fornece uma maneira de estabelecer uma conexão de rede privada dedicada do seu data center ou escritório para a AWS, o que pode reduzir custos e aumentar a largura de banda.
+* **AWS VPN:** Fornece um túnel privado seguro da sua rede ou dispositivo para a Rede Global da AWS.
+
+---
+
+## Segurança, Identidade e Conformidade (Security, Identity & Compliance)
+
+* **AWS Identity and Access Management (IAM):** Permite gerenciar o acesso aos serviços e recursos da AWS de forma segura.
+* **AWS Organizations:** Permite restringir quais serviços e ações são permitidos em suas contas.
+* **Amazon Cognito:** Permite adicionar autenticação de usuário e controle de acesso aos seus aplicativos web e móveis.
+* **AWS Artifact:** Fornece acesso sob demanda a relatórios de segurança e conformidade da AWS, bem como a acordos online selecionados.
+* **AWS Key Management Service (AWS KMS):** Permite criar e gerenciar chaves de criptografia para controlar o uso da criptografia em uma ampla gama de serviços AWS e em suas aplicações.
+* **AWS Shield:** Um serviço gerenciado de proteção contra negação de serviço distribuída (DDoS) que protege as aplicações em execução na AWS.
+
+---
+
+## Gerenciamento de Custos (Cost Management)
+
+* **AWS Cost and Usage Report:** Contém o conjunto mais abrangente de dados de custo e uso da AWS disponíveis, incluindo metadados adicionais sobre serviços, preços e reservas.
+* **AWS Budgets:** Permite definir orçamentos personalizados que o alertam quando seus custos ou uso da AWS excedem (ou a previsão indica que excederão) o valor orçado.
+* **AWS Cost Explorer:** Possui uma interface fácil de usar que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo.
+
+---
+
+## Gerenciamento e Governança (Management & Governance)
+
+* **AWS Management Console:** Uma interface de usuário baseada na web para acessar sua conta AWS.
+* **AWS Config:** Um serviço que ajuda a rastrear o inventário de recursos e as alterações.
+* **Amazon CloudWatch:** Permite monitorar recursos e aplicações.
+* **AWS Auto Scaling:** Fornece recursos que permitem escalar múltiplos recursos para atender à demanda.
+* **AWS Command Line Interface (CLI):** Uma ferramenta unificada para gerenciar os serviços da AWS via linha de comando.
+* **AWS Trusted Advisor:** Uma ferramenta online que ajuda a otimizar o desempenho e a segurança usando as melhores práticas da AWS.
+* **AWS Well-Architected Tool:** Fornece ajuda na revisão e melhoria de suas cargas de trabalho (workloads).
+* **AWS CloudTrail:** Um serviço que rastreia a atividade do usuário e o uso de APIs em suas contas da AWS.
+
+# Revisão do Módulo e Análise de Questão Prática
+
+## Revisão dos Tópicos Aprendidos
+
+Neste módulo, você aprendeu a:
+* Identificar a diferença entre **Regiões da AWS**, **Zonas de Disponibilidade** e **Locais de Borda (Edge Locations)**.
+* Identificar os **serviços e as categorias de serviços** da AWS.
+
+---
+
+## Análise de Questão Prática (Exemplo de Exame)
+
+### A Pergunta
+
+> "Qual componente da infraestrutura global da AWS o Amazon CloudFront utiliza para garantir a entrega com baixa latência?"
+
+### Decompondo a Pergunta
+
+Para chegar à resposta correta, é preciso analisar as palavras-chave:
+
+1.  **"Componente da infraestrutura global da AWS"**:
+    * Isso indica que o foco da questão é em algo que a **AWS fornece**, e não em um recurso que um cliente possa criar ou configurar em sua própria conta.
+
+2.  **"CloudFront"**:
+    * É importante saber qual serviço da AWS a questão está abordando, neste caso, o serviço de entrega de conteúdo.
+
+3.  **"Garantir a entrega com baixa latência"**:
+    * Este é o benefício-chave. O uso de outro serviço poderia depender de um benefício diferente (ex: alta disponibilidade, recuperação de desastres). O termo "baixa latência" é a principal pista para o componente que estamos procurando.
+
+### A Resposta Correta
+
+Usando as informações da questão, podemos determinar que a resposta correta é:
+
+**B) Locais de Borda da AWS (AWS Edge Locations)**
