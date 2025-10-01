@@ -3008,3 +3008,31 @@ Existem três maneiras de habilitar a criptografia do lado do servidor para prot
 O Glacier aplica duas camadas de segurança:
 1.  **Controle de Acesso:** Você controla o acesso aos seus dados usando o **IAM**.
 2.  **Criptografia:** Seus dados são **criptografados por padrão**, e você pode escolher como gerenciar as chaves.
+
+# Módulo de Armazenamento: Revisão Final e Questão Prática
+
+## Checklist de Aprendizagem do Módulo
+Ao concluir este módulo, você aprendeu a:
+
+* Identificar os diferentes tipos de armazenamento (Objetos, Blocos, Arquivos).
+* Explicar e descrever a funcionalidade do Amazon S3, Amazon EBS, Amazon EFS e Amazon S3 Glacier.
+* Entender os diferentes casos de uso para esses serviços e como escolher a solução de armazenamento correta com base em seus requisitos.
+
+---
+
+## Análise de Questão Prática (Exemplo de Exame)
+
+### A Pergunta
+
+> "Uma empresa quer armazenar dados que não são acessados com frequência. Qual é a melhor e mais econômica solução que deve ser considerada?"
+
+### Análise das Palavras-Chave
+
+* **"Não são acessados com frequência":** Esta é a principal característica do padrão de acesso dos dados.
+* **"Solução econômica":** Este é o principal requisito de negócio.
+
+### A Resposta Correta e a Justificativa
+
+Com base nas palavras-chave, a resposta correta é **B, Amazon S3 Glacier**.
+
+O Glacier é a maneira mais econômica de armazenar dados que não são acessados com frequência.
