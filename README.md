@@ -3441,3 +3441,254 @@ Em resumo, neste módulo você aprendeu a:
 * **A Pergunta:** "Qual dos seguintes é um serviço de banco de dados NoSQL totalmente gerenciado?"
 * **A Palavra-Chave:** "NoSQL".
 * **A Resposta Correta e a Justificativa:** A resposta correta é **B, Amazon DynamoDB**. Embora Aurora, Redshift e DynamoDB sejam todos serviços gerenciados, o DynamoDB é o único que é um serviço de banco de dados NoSQL.
+
+# Módulo 9: Arquitetura na Nuvem (Guia Completo do Well-Architected Framework)
+
+## Parte 1: Introdução ao AWS Well-Architected Framework
+
+### O que é Arquitetura e o Papel do Arquiteto de Nuvem?
+* **Arquitetura:** É a arte e a ciência de projetar e construir grandes estruturas. Sistemas grandes requerem arquitetos para gerenciar seu tamanho e complexidade.
+* **O que fazem os arquitetos de nuvem?**
+    1.  Engajam-se com os tomadores de decisão para identificar o objetivo de negócio e as capacidades que precisam de melhoria.
+    2.  Garantem o alinhamento entre os entregáveis de tecnologia de uma solução e as metas de negócio.
+    3.  Trabalham com as equipes de entrega para garantir que os recursos tecnológicos sejam apropriados.
+
+### O que é o AWS Well-Architected Framework?
+É um guia projetado para ajudá-lo a construir a infraestrutura **mais segura, de alto desempenho, resiliente e eficiente** possível para suas aplicações e cargas de trabalho na nuvem.
+* Ele fornece um conjunto de perguntas fundamentais e as melhores práticas que podem ajudá-lo a avaliar e implementar suas arquiteturas.
+* Foi desenvolvido pela AWS após a revisão de milhares de arquiteturas de clientes.
+
+### Como o Framework é Organizado?
+O framework é organizado em **cinco pilares**. Cada pilar inclui um conjunto de princípios de design e melhores práticas.
+
+---
+
+## Parte 2: Os 5 Pilares do Well-Architected Framework
+
+### 1. Pilar de Excelência Operacional
+* **Foco:** A capacidade de executar e monitorar sistemas para entregar valor de negócio e melhorar continuamente as operações.
+* **Tópicos-chave:** Gerenciar e automatizar mudanças, responder a eventos e definir padrões para gerenciar com sucesso as operações diárias.
+
+#### Princípios de Design (6)
+1.  **Executar operações como código:** Defina toda a sua carga de trabalho (aplicação e infraestrutura) como código para limitar o erro humano e permitir respostas consistentes a eventos.
+2.  **Anotar documentação:** Automatize a criação de documentação anotada após cada build.
+3.  **Fazer mudanças pequenas, frequentes e reversíveis:** Projete componentes para serem atualizados regularmente em pequenos incrementos que podem ser revertidos se falharem.
+4.  **Refinar procedimentos operacionais frequentemente:** Procure oportunidades para melhorar e atualizar os procedimentos à medida que evoluem.
+5.  **Antecipar falhas:** Identifique fontes potenciais de falha para que possam ser removidas ou mitigadas. Teste cenários de falha regularmente.
+6.  **Aprender com todos os eventos e falhas operacionais:** Compartilhe o que foi aprendido entre as equipes e em toda a organização.
+
+### 2. Pilar de Segurança
+* **Foco:** A capacidade de proteger informações, sistemas e ativos, entregando valor de negócio através de avaliação de riscos e estratégias de mitigação.
+* **Tópicos-chave:** Proteger a confidencialidade e integridade dos dados, gerenciar privilégios, proteger sistemas e detectar eventos de segurança.
+
+#### Princípios de Design (7)
+1.  **Implementar uma base de identidade forte:** Implemente o princípio do menor privilégio e a separação de deveres.
+2.  **Habilitar a rastreabilidade:** Monitore, alerte e audite ações e mudanças em seu ambiente em tempo real.
+3.  **Aplicar segurança em todas as camadas:** Aplique defesa em profundidade e controles de segurança em todas as camadas da sua arquitetura (rede de borda, VPC, sub-rede, load balancer, instância, SO, aplicação).
+4.  **Automatizar as melhores práticas de segurança:** Automatize mecanismos de segurança para escalar de forma mais rápida e econômica.
+5.  **Proteger dados em trânsito e em repouso:** Classifique seus dados e use mecanismos como criptografia, tokenização e controle de acesso.
+6.  **Manter as pessoas longe dos dados:** Crie mecanismos e ferramentas para reduzir ou eliminar a necessidade de acesso direto ou processamento manual de dados sensíveis.
+7.  **Preparar-se para eventos de segurança:** Tenha um processo de gerenciamento de incidentes e execute simulações de resposta a incidentes.
+
+### 3. Pilar de Confiabilidade
+* **Foco:** A capacidade de um sistema se recuperar de interrupções, adquirir dinamicamente recursos para atender à demanda e mitigar interrupções (como erros de configuração ou problemas de rede).
+* **Tópicos-chave:** Configuração, planejamento de recuperação e gerenciamento de mudanças.
+
+#### Princípios de Design (5)
+1.  **Testar procedimentos de recuperação:** Teste como seus sistemas falham e valide seus procedimentos de recuperação para expor falhas antes que elas aconteçam de verdade.
+2.  **Recuperar-se automaticamente de falhas:** Monitore sistemas por KPIs (Key Performance Indicators) e configure-os para acionar uma recuperação automatizada quando um limiar for violado.
+3.  **Escalar horizontalmente para aumentar a disponibilidade agregada:** Substitua um recurso grande por múltiplos recursos menores para reduzir o impacto de um único ponto de falha.
+4.  **Parar de adivinhar a capacidade:** Monitore a demanda e o uso do sistema e automatize a adição ou remoção de recursos para manter o nível ideal.
+5.  **Gerenciar mudanças na automação:** Use automação para fazer e gerenciar mudanças na infraestrutura.
+
+### 4. Pilar de Eficiência de Performance
+* **Foco:** A capacidade de usar recursos de TI e computação de forma eficiente para atender aos requisitos do sistema e manter essa eficiência à medida que as demandas ou tecnologias mudam.
+* **Tópicos-chave:** Selecionar os tipos e tamanhos de recursos corretos, monitorar o desempenho e tomar decisões informadas para manter a eficiência.
+
+#### Princípios de Design (5)
+1.  **Democratizar tecnologias avançadas:** Consuma tecnologias complexas (NoSQL, machine learning, etc.) como um serviço, permitindo que as equipes foquem no desenvolvimento do produto.
+2.  **Tornar-se global em minutos:** Implante sistemas em múltiplas regiões da AWS para fornecer menor latência e uma melhor experiência ao cliente a um custo mínimo.
+3.  **Usar arquiteturas sem servidor (serverless):** Remova o fardo operacional de executar e manter servidores.
+4.  **Experimentar mais frequentemente:** Realize testes comparativos de diferentes tipos de instâncias, armazenamento ou configurações.
+5.  **Ter simpatia mecânica:** Use a abordagem tecnológica que melhor se alinha ao que você está tentando alcançar (ex: considere seus padrões de acesso a dados ao selecionar um banco de dados).
+
+### 5. Pilar de Otimização de Custos
+* **Foco:** A capacidade de executar sistemas para entregar valor de negócio ao menor preço possível.
+* **Tópicos-chave:** Entender e controlar onde o dinheiro está sendo gasto, selecionar os recursos apropriados, analisar gastos ao longo do tempo e escalar sem gastar demais.
+
+#### Princípios de Design (5)
+1.  **Adotar um modelo de consumo:** Pague apenas pelos recursos de computação que você precisa, aumentando ou diminuindo o uso com base nos requisitos de negócio, não em previsões elaboradas.
+2.  **Medir a eficiência geral:** Meça o resultado de negócio da carga de trabalho e os custos associados a ele.
+3.  **Parar de gastar dinheiro em operações de data center:** Deixe a AWS cuidar do trabalho pesado de empilhar e alimentar servidores, para que você possa focar em seus clientes e projetos de negócio.
+4.  **Analisar e atribuir despesas:** Identifique o uso e os custos do sistema e atribua os custos de TI a proprietários individuais de cargas de trabalho.
+5.  **Usar serviços gerenciados e de nível de aplicação para reduzir o custo de propriedade:** Eles reduzem o fardo operacional e podem oferecer um custo menor por transação.
+
+---
+
+## Parte 3: Aprofundando em Confiabilidade e Alta Disponibilidade
+
+> "Tudo falha o tempo todo." - Werner Vogels, CTO da Amazon
+
+* **Confiabilidade:** É a probabilidade de um sistema inteiro (hardware, firmware, software) funcionar como pretendido por um período especificado. É medida estatisticamente.
+    * **Tempo Médio Entre Falhas (MTBF):** É a soma do Tempo Médio Para Falhar (MTTF) e o Tempo Médio Para Reparar (MTTR). No exemplo dado: `MTBF = 96h (MTTF) + 72h (MTTR) = 168h (1 semana)`.
+
+* **Disponibilidade:** É a porcentagem de tempo que um sistema está operando normalmente. É comumente definida como a porcentagem de tempo de atividade (uptime) em um período (geralmente um ano). Uma forma abreviada de se referir à disponibilidade é o **número de "noves"** (ex: "cinco noves" = 99,999%).
+
+* **Alta Disponibilidade:** Um sistema altamente disponível pode suportar alguma degradação enquanto permanece disponível, com tempo de inatividade minimizado e mínima intervenção humana.
+
+* **Fatores que Determinam a Disponibilidade:**
+    1.  **Tolerância a falhas:** A redundância embutida dos componentes de uma aplicação.
+    2.  **Escalabilidade:** A capacidade da aplicação de acomodar aumentos de capacidade.
+    3.  **Recuperabilidade:** A capacidade de restaurar o serviço rapidamente e sem perda de dados.
+
+> **Equilíbrio Custo-Benefício:** Lembre-se que melhorar a disponibilidade geralmente leva a um aumento de custo. É importante equilibrar o custo da melhoria com o benefício para seus usuários.
+
+---
+
+## Parte 4: AWS Trusted Advisor - A Ferramenta de Análise
+O Trusted Advisor analisa todo o seu ambiente AWS e fornece recomendações em cinco categorias para ajudá-lo a seguir as melhores práticas.
+
+#### As 5 Categorias de Recomendações:
+1.  **Otimização de Custos:** Recomendações para otimizar custos, como eliminar recursos ociosos ou não utilizados e se comprometer com capacidade reservada.
+2.  **Performance:** Recomendações para melhorar o desempenho, verificando limites de serviço, taxa de transferência provisionada e monitorando instâncias superutilizadas.
+3.  **Segurança:** Recomendações para melhorar a segurança, identificando lacunas, recursos de segurança a serem habilitados e examinando permissões.
+4.  **Tolerância a Falhas:** Recomendações para aumentar a disponibilidade e redundância, aproveitando o auto scaling, health checks, implantações Multi-AZ e backups.
+5.  **Limites de Serviço:** Verifica o uso de serviços que está acima de 80% do limite do serviço.
+
+> **Quando Usar?** Você não precisa esperar ter um ambiente de produção pronto. Pode usar o Trusted Advisor assim que começar a implementar suas arquiteturas.
+
+---
+
+## Parte 5: Revisão Final e Questão Prática do Módulo
+
+### Checklist de Aprendizagem do Módulo
+* Descrever o AWS Well-Architected Framework, incluindo os cinco pilares.
+* Identificar os princípios de design do framework.
+* Explicar a importância da confiabilidade e alta disponibilidade.
+* Identificar como o AWS Trusted Advisor ajuda os clientes e interpretar suas recomendações.
+
+### Análise de Questão Prática
+* **A Pergunta:** "Um engenheiro de SysOps quer proteger seus dados em trânsito e em repouso. Que serviços ele poderia usar para proteger seus dados?"
+* **As Palavras-Chave:** "Proteger seus dados em trânsito e em repouso".
+* **A Resposta Correta e a Justificativa:** A resposta correta é **D, todos os anteriores**. Elastic Load Balancing, Amazon EBS e Amazon S3 incluem capacidades de criptografia para proteger dados em trânsito e em repouso.
+
+# Módulo 10: Escalabilidade Automática e Monitoramento (Guia Completo)
+
+## Parte 1: Introdução ao Módulo
+Este módulo aborda três serviços que, embora funcionem bem individualmente, tornam-se ainda mais poderosos quando usados em conjunto:
+* Elastic Load Balancing (ELB)
+* Amazon CloudWatch
+* Amazon EC2 Auto Scaling
+
+Ao final do módulo, você será capaz de distribuir tráfego (ELB), monitorar recursos (CloudWatch) e escalar servidores automaticamente (Auto Scaling) para melhorar uma arquitetura.
+
+---
+
+## Parte 2: Guia do Elastic Load Balancing (ELB)
+
+### O Problema que Resolve
+Sites modernos de alto tráfego precisam servir milhões de requisições simultâneas. Para atender a essa demanda, são necessários servidores adicionais, e o tráfego precisa ser distribuído entre eles de forma eficiente.
+
+### O que é?
+O ELB é um serviço que **distribui o tráfego de entrada** da aplicação ou da rede entre múltiplos alvos, como instâncias EC2, contêineres, endereços IP e funções Lambda. Ele escala o balanceador de carga automaticamente conforme o tráfego muda.
+
+### Os 3 Tipos de Load Balancer
+| Tipo | Nível OSI | Roteamento Baseado em | Ideal para |
+| :--- | :--- | :--- | :--- |
+| **Application Load Balancer (ALB)** | Camada 7 (Aplicação) | Conteúdo da requisição (HTTP/HTTPS) | Balanceamento de carga avançado de tráfego HTTP/HTTPS, microserviços, contêineres. |
+| **Network Load Balancer (NLB)** | Camada 4 (Transporte) | Dados do protocolo IP (TCP/UDP) | Balanceamento de carga de tráfego TCP/UDP, altíssima performance (milhões de req/s) e padrões de tráfego voláteis. |
+| **Classic Load Balancer (CLB)** | Camada 7 e 4 | Requisição ou Conexão | Aplicações legadas. A AWS recomenda o uso de ALB ou NLB quando possível. |
+
+### Como Funciona?
+* **Listeners:** São processos que verificam por requisições de conexão. Cada listener é configurado com um protocolo (ex: HTTP) e uma porta (ex: 80) para o tráfego que vem dos clientes.
+* **Grupos de Alvos (Target Groups):** Com ALBs e NLBs, você registra seus alvos (ex: instâncias EC2) em grupos e roteia o tráfego para esses grupos. Com CLBs, você registra as instâncias diretamente.
+* **Verificações de Saúde (Health Checks):** O balanceador monitora a saúde dos alvos registrados e envia tráfego apenas para as instâncias saudáveis. Se um alvo fica doente, o tráfego é interrompido até que ele se recupere.
+
+### Casos de Uso Comuns
+* **Alta Disponibilidade e Tolerância a Falhas:** Balanceia o tráfego entre alvos saudáveis em múltiplas Zonas de Disponibilidade.
+* **Suporte a Contêineres:** Um balanceador de carga pode distribuir o tráfego entre múltiplos contêineres rodando em diferentes portas na mesma instância EC2, com integração profunda com o Amazon ECS.
+
+### Monitoramento
+* **Amazon CloudWatch Metrics:** O ELB publica métricas sobre seus balanceadores e alvos.
+* **Logs de Acesso:** Capturam informações detalhadas sobre cada requisição e as armazenam no S3 para análise.
+* **AWS CloudTrail:** Captura todas as chamadas de API feitas ao serviço ELB para auditoria.
+
+---
+
+## Parte 3: Guia do Amazon CloudWatch
+
+### O que é?
+O CloudWatch é um serviço de **monitoramento e observabilidade** construído para engenheiros DevOps, desenvolvedores e gerentes de TI. Ele monitora seus recursos e aplicações da AWS em tempo real.
+
+### Componentes e Funcionalidades Principais
+
+#### 1. Métricas e Alarmes
+* **Métricas:** São variáveis que você pode medir para seus recursos e aplicações (ex: utilização de CPU, latência de requisição, etc.).
+* **Alarmes:** Você pode criar um alarme para monitorar qualquer métrica. Quando a métrica ultrapassa um limiar que você define, o alarme é acionado.
+* **Ações de Alarme:** Um alarme pode:
+    * Enviar uma notificação para o **Amazon Simple Notification Service (SNS)**.
+    * Executar uma ação do **Amazon EC2 Auto Scaling**.
+    * Executar uma ação direta do EC2 (parar, terminar, reiniciar).
+
+#### 2. CloudWatch Events (Eventos)
+* Permite definir regras que correspondem a eventos ou mudanças no seu ambiente AWS (ex: uma instância EC2 mudou de estado).
+* Quando um evento corresponde a uma regra, ele pode ser roteado para alvos para processamento (ex: invocar uma função Lambda, iniciar uma tarefa ECS, etc.).
+
+#### Como Configurar um Alarme (Baseado em Limiar Estático)
+1.  **Namespace:** O serviço da AWS de onde a métrica vem (ex: `AWS/EC2`).
+2.  **Métrica:** A variável que você quer medir (ex: `CPUUtilization`).
+3.  **Estatística:** Como agregar a métrica (ex: Média, Mínima, Máxima).
+4.  **Período:** O período de avaliação do alarme (ex: 5 minutos).
+5.  **Condições:** O limiar para o alarme (ex: `> 80%`).
+6.  **Configuração Adicional:** Quantos pontos de dados precisam violar o limiar para o alarme disparar.
+7.  **Ação:** O que fazer quando o alarme disparar (enviar notificação, escalar, etc.).
+
+---
+
+## Parte 4: Guia do Amazon EC2 Auto Scaling
+
+### O Problema que Resolve
+Escalabilidade é a habilidade de aumentar ou diminuir a capacidade de computação. Provisionar capacidade fixa para o pico de demanda gera custos desnecessários (recursos ociosos), enquanto provisionar pouca capacidade causa problemas de performance e disponibilidade.
+
+### O que é?
+O EC2 Auto Scaling é um serviço que ajuda a manter a disponibilidade da aplicação e permite **adicionar (scale-out) ou remover (scale-in) instâncias EC2 automaticamente** de acordo com condições que você define.
+
+### Componentes Principais
+* **Grupo de Auto Scaling:** Uma coleção de instâncias EC2 tratadas como um agrupamento lógico. É definido por:
+    * **Mínimo:** O número mínimo de instâncias que o grupo deve ter.
+    * **Máximo:** O número máximo de instâncias que o grupo pode atingir.
+    * **Capacidade Desejada:** O número de instâncias que o grupo deve ter em condições normais.
+* **Configuração de Lançamento (Launch Configuration):** Um modelo de configuração de instância que o Auto Scaling usa para lançar novas instâncias (especificando AMI, tipo de instância, IAM Role, Security Groups, etc.).
+
+### As Várias Maneiras de Escalar
+* **Manter o Nível Atual:** O Auto Scaling realiza verificações de saúde e substitui automaticamente instâncias não saudáveis para manter a capacidade desejada.
+* **Escalabilidade Manual:** Você altera manualmente a capacidade desejada do grupo.
+* **Escalabilidade Agendada:** Ações de escalonamento são executadas em datas e horários pré-definidos. Ideal para cargas de trabalho previsíveis.
+* **Escalabilidade Dinâmica (On-Demand):** A forma mais comum. Usa políticas de escalonamento que respondem a mudanças na demanda, geralmente acionadas por alarmes do CloudWatch.
+* **Escalabilidade Preditiva:** Usa machine learning com base em dados históricos para prever a demanda futura e programar mudanças de capacidade com antecedência.
+
+### Como os 3 Serviços Trabalham Juntos (Arquitetura Clássica)
+1.  O **Elastic Load Balancing** distribui o tráfego entre as instâncias EC2 e envia métricas (como `CPUUtilization`) para o **Amazon CloudWatch**.
+2.  Um **alarme do CloudWatch** monitora a métrica de utilização média da CPU do grupo.
+3.  Quando a CPU média ultrapassa um limiar (ex: 60% por 5 minutos), o alarme do CloudWatch dispara e aciona uma política do **EC2 Auto Scaling**.
+4.  O **Auto Scaling** usa a configuração de lançamento para adicionar uma nova instância EC2 ao grupo.
+5.  O Auto Scaling então registra a nova instância no **ELB**.
+6.  O **ELB** realiza verificações de saúde na nova instância e, quando ela estiver saudável, começa a enviar tráfego para ela.
+
+### O que é o AWS Auto Scaling?
+É um serviço separado que permite construir planos de escalonamento não apenas para instâncias EC2, mas também para outros recursos como frotas Spot, serviços ECS, tabelas DynamoDB e réplicas Aurora.
+
+---
+
+## Parte 5: Revisão Final e Questão Prática do Módulo
+
+### Checklist de Aprendizagem do Módulo
+* Distribuir tráfego entre instâncias EC2 usando o ELB.
+* Identificar como o CloudWatch permite monitorar recursos em tempo real.
+* Explicar como o EC2 Auto Scaling lança e encerra servidores em resposta a mudanças na carga de trabalho.
+* Realizar tarefas de balanceamento para melhorar uma arquitetura.
+
+### Análise de Questão Prática
+* **A Pergunta:** "Qual serviço você usaria para enviar alertas com base em alarmes do Amazon CloudWatch?"
+* **As Palavras-Chave:** "Enviar alertas" e "alarmes do Amazon CloudWatch".
+* **A Resposta Correta e a Justificativa:** A resposta correta é **A, Amazon Simple Notification Service (SNS)**. Quando você cria um alarme no CloudWatch, você o configura para enviar uma notificação para um tópico do Amazon SNS. As outras opções são eliminadas porque, embora o CloudTrail possa enviar notificações para o SNS, a pergunta especifica que a base são os alarmes do CloudWatch, e o Trusted Advisor e o Route 53 têm outras finalidades.
